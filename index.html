@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Efren's Flixster</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="header"> 
-            <h1>Efren's Flixster</h1>
-            <form>
-                <label for="movie-search">Search Movies:</label>
-                <input type="text" id="movie-search" name="movie-name" placeholder="search for a movie">
-            </form>
-        </div>
-        
-        <div id="movies-grid">   
-        </div>
-    
+  <head>
+    <meta charset="utf-8" />
+    <title>Efren's Flixster</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Efren's Flixster</h1>
+      <div id="search-container">
+        <form action="/submit-form" method="POST" id="search-form">
+          <label for="movie-search">Search Movies:</label>
+          <input
+            type="text"
+            id="movie-search"
+            name="movie-name"
+            placeholder="search for a movie"
+          />
+        </form>
+        <button id="reset-btn">Reset</button>
+      </div>
+    </div>
 
-        <button id="load-movies">Load More</button>
+    <div id="movies-grid"></div>
 
+    <button id="load-movies">Load More</button>
 
-        <script src="script.js"></script>
-    </body>
+    <script src="script.js"></script>
+  </body>
 </html>
