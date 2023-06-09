@@ -23,7 +23,7 @@ function loadCards(movieInfo) {
     image.src = imageURL + movie.poster_path;
     image.alt = movie.title;
 
-    const title = document.createElement("h2");
+    const title = document.createElement("h3");
     title.setAttribute("class", "movie-title");
     title.innerText = movie.title;
 
@@ -48,7 +48,7 @@ loadBtn.addEventListener("click", function (searchMore) {
 });
 
 /* SEARCH MOVIES */
-const searchForm = document.getElementById("search-form");
+const searchForm = document.getElementById("search-input");
 
 searchForm.addEventListener("submit", async function (event) {
   event.preventDefault();

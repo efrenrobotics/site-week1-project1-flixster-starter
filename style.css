@@ -1,66 +1,95 @@
+body {
+  background-color: #232528;
+}
+
 h1 {
-    color: #CC5500;
-    text-align: center;
+  color: #cc5500;
+  text-align: center;
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 50px;
+}
+
+.split-title {
+  display: inline-block;
+  background: linear-gradient(to right, white 35%, red 65%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* REQUIRED ATTRIBUTES */
 
 #movies-grid {
-    color:black;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 100px; 
-};
-
-.movie-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-    text-align: center;
-    border: black;
-    color: black;
-};
-
-.movie-title{
-    text-align: center;
-
+  margin-top: 30px;
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 100px;
 }
 
-.movie-poster img{
-    height: 80%;
-    max-width: 50px;
-};
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.movie-title {
+  color: #eaf6ff;
+  max-width: 55%;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.movie-poster img {
+  object-fit: cover;
+  height: 20%;
+  /* max-width: 50px; */
+}
 
 .movies-votes {
-    color: white;
-};
-
-#load-movies{
-    color: black;
+  color: white;
 }
 
-
+#load-movies {
+  color: black;
+}
 
 btn #load-more-movies-btn {
-    color: white;
-};
+  color: white;
+}
+
+#search-container {
+  min-width: 70%;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
 
 #search-input {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffa400;
+}
 
-};
+#movie-search {
+  min-width: 100%;
+  height: 50px;
+}
+
+input[type="text"] {
+  font-size: 20px;
+  font-family: "Roboto", Arial, sans-serif;
+}
 
 #close-search-btn {
-
-};
-
-
-
-
+}
