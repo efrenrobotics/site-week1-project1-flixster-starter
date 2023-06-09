@@ -1,1 +1,66 @@
+h1 {
+    color: #CC5500;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* REQUIRED ATTRIBUTES */
+
+#movies-grid {
+    color:black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 100px; 
+};
+
+.movie-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    text-align: center;
+    border: black;
+    color: black;
+};
+
+.movie-title{
+    text-align: center;
+
+}
+
+.movie-poster img{
+    height: 80%;
+    max-width: 50px;
+};
+
+.movies-votes {
+    color: white;
+};
+
+#load-movies{
+    color: black;
+}
+
+
+
+btn #load-more-movies-btn {
+    color: white;
+};
+
+#search-input {
+
+};
+
+#close-search-btn {
+
+};
+
+
+
 
