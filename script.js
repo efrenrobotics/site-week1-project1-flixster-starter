@@ -29,7 +29,8 @@ function loadCards(movieInfo) {
 
     const rating = document.createElement("h3");
     rating.setAttribute("class", "movies-votes");
-    rating.innerText = `Rating: ${movie.vote_average}`;
+    const rateEmoji = rateApp(movie.vote_average);
+    rating.innerHTML = `${movie.vote_average}  ${rateEmoji}`;
 
     movieCard.appendChild(image);
     movieCard.appendChild(title);
@@ -40,7 +41,7 @@ function loadCards(movieInfo) {
 }
 
 /* LOAD MORE - load next movie page into the screen */
-const loadBtn = document.querySelector("#load-movies");
+const loadBtn = document.querySelector("#load-more-movies-btn");
 loadBtn.addEventListener("click", function (searchMore) {
   if (searchMore) {
   }
@@ -49,7 +50,6 @@ loadBtn.addEventListener("click", function (searchMore) {
 
 /* SEARCH MOVIES */
 const searchForm = document.getElementById("search-input");
-
 searchForm.addEventListener("submit", async function (event) {
   event.preventDefault();
   grid.innerHTML = "";
@@ -62,25 +62,37 @@ searchForm.addEventListener("submit", async function (event) {
   loadCards(results);
 });
 
-const resetBtn = document.getElementById("reset-btn");
-resetBtn.addEventListener("click", function () {
-  grid.innerHTML = "";
-  pageNum = 1;
-  apiCall();
-});
-
 /***** FETCH API *****/
 /* Async functions, serve as futures and waits for data to fetch and process to finish */
 const apiCall = async () => {
   const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${pageNum}`;
-
-  //   const urlSearch = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${searchResult}`;
   const res = await fetch(url);
   const data = await res.json();
   const results = data.results;
   loadCards(results);
   pageNum++;
 };
+
+/* RESET TO ORIGINAL PAGE */
+const resetBtn = document.getElementById("close-search-btn");
+resetBtn.addEventListener("click", function () {
+  grid.innerHTML = "";
+  pageNum = 1;
+  apiCall();
+});
+
+/***** Rating System *****/
+function rateApp(rating) {
+  if (rating >= 8) {
+    return "&#x1F603;";
+  } else if (rating > 6) {
+    return "&#x1F642;";
+  } else if (rating > 4) {
+    return "&#x1F605;";
+  } else {
+    return "&#x1F92E;";
+  }
+}
 
 /* Initial movie load */
 apiCall();
